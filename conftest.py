@@ -26,9 +26,9 @@ def chrome_options():
 
 
 @pytest.fixture
-def web_browser(request, chrome_options):
+def web_browser(request):
     # Используем переданные опции
-    browser = webdriver.Chrome(options=chrome_options)
+    browser = webdriver.Chrome()
     browser.maximize_window()
 
     # Вернуть экземпляр браузера в тестовый пример:
