@@ -97,7 +97,7 @@ async def run_api_tests(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Запуск pytest
     result = await execute_command(
-        "pytest -s -v class_work_12/test/api/ --alluredir=./results",
+        "pytest -s -v test/ --alluredir=./results",
         update
     )
 
@@ -197,6 +197,9 @@ async def about(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(about_text)
 
+# async def token_analysis(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     await update.message.reply_text("🔍 Анализирую токены...")
+
 
 def main():
     application = Application.builder().token('8629884103:AAHSL9tskyw7C8sd_KyNjxN4ty5LtSI1tuk').build()
@@ -209,6 +212,7 @@ def main():
         CommandHandler("fullreport", full_cycle),
         CommandHandler("about", about),
         CommandHandler("start", start)
+        # CommandHandler("token_analysis", token_analysis)
 
     ]
 
