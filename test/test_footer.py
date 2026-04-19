@@ -1,18 +1,15 @@
 import time
-from telnetlib import EC
-
 import allure
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
 from conftest import web_browser
-from locators.locators_header import Header
+from locators.locator_footer import Footer
 
 
-@allure.title('тесты хедера')
-def test_header(web_browser):
-    page = Header(web_browser)
+@allure.title('тесты футера')
+def test_footer(web_browser):
+    page = Footer(web_browser)
     time.sleep(15)
+    # footer_element = web_browser.find_element(id="226f095")
+    # web_browser.execute_script("arguments[0].scrollIntoView(true);", footer_element)
     with allure.step('главная'):
         if page.btn_main.is_clickable():
             page.btn_main.click(3)
@@ -44,6 +41,26 @@ def test_header(web_browser):
     with allure.step('контакты'):
         if page.btn_contacts.is_clickable():
             page.btn_contacts.click(3)
+            web_browser.back()
+    with allure.step('ютуб'):
+        if page.btn_youtube.is_clickable():
+            page.btn_youtube.click(3)
+            web_browser.back()
+    with allure.step('вк'):
+        if page.btn_vk.is_clickable():
+            page.btn_vk.click(3)
+            web_browser.back()
+    with allure.step('одноклассники'):
+        if page.btn_ok.is_clickable():
+            page.btn_ok.click(3)
+            web_browser.back()
+    with allure.step('телеграм'):
+        if page.btn_tg.is_clickable():
+            page.btn_tg.click(3)
+            web_browser.back()
+    with allure.step('телефон'):
+        if page.btn_phone.is_clickable():
+            page.btn_phone.click(3)
             web_browser.back()
 
 time.sleep(3)
