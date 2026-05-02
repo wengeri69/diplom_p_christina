@@ -317,7 +317,7 @@ async def search_dataset(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     application = Application.builder().token(BOT_TOKEN).build()
 
-    # все команды
+    # все командыf
     handlers = [
         CommandHandler("start", start),
         CommandHandler("about", about),
