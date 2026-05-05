@@ -16,9 +16,13 @@ def test_main(web_browser):
         WebDriverWait(web_browser, 10).until(
             EC.presence_of_element_located((By.XPATH, "//a[@href='en/character.html']"))
         )
-        assert page.btn_character is not None, "Кнопка 'персонажи' не найдена"
-        page.btn_character.click()
+        assert page.self.btn_character is not None, "Кнопка 'персонажи' не найдена"
+        page.self.btn_character.click()
         # web_browser.back()
+
+
+
+
 
     # with allure.step('особенности'):
     #     if page.btn_features.is_clickable():
