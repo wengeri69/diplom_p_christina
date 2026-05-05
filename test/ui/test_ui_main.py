@@ -1,14 +1,10 @@
 import time
 from telnetlib import EC
-
 import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from conftest import web_browser
 from locators.locators_main import Main
-
-
-# from locators.locators_main import Main
 
 
 @allure.title('тесты мейна')
