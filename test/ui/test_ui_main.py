@@ -1,18 +1,29 @@
 import time
+from telnetlib import EC
+
 import allure
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from conftest import web_browser
 from locators.locators_main import Main
 
 
+# from locators.locators_main import Main
+
+
 @allure.title('тесты мейна')
-def test_header(web_browser):
+def test_main(web_browser):
     page = Main(web_browser)
-    time.sleep(15)
+    time.sleep(5)
+
     with allure.step('персонажи'):
-        if page.btn_character.is_clickable():
-            page.btn_character.click(3)
-            web_browser.back()
+        WebDriverWait(web_browser, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//a[@href='en/character.html']"))
+        )
+        assert page.btn_character is not None, "Кнопка 'персонажи' не найдена"
+        page.btn_character.click()
+        # web_browser.back()
+
     # with allure.step('особенности'):
     #     if page.btn_features.is_clickable():
     #         page.btn_features.click(3)
