@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from page.base_page import WebPage
 from page.elements import WebElement
 import os
@@ -10,8 +9,14 @@ class Main(WebPage):
 
         super().__init__(web_driver, url)
 
-        self.btn_character = WebElement (By.XPATH, "//a[@href='en/character.html']")
-
+    btn_character = WebElement (xpath="//a[@href='en/character.html']")
+    btn_features = WebElement(xpath="//a[@href='en/features.html']")
+    btn_newspage = WebElement(xpath="//a[@href='en/newspage.html']")
+    btn_story = WebElement(xpath="//a[@href='en/story.html']")
+    btn_gallery = WebElement(xpath="//a[@href='gallery/en/']")
+    btn_merch = WebElement(xpath="//a[@href='https://neteasestore.com/collections/identity-v']")
+    btn_art_museum = WebElement(xpath="//a[@href='en/video.html']")
+    btn_character_hunter = WebElement(xpath="//a[@href='character/index.html?type=hunter']")
 
 
 
