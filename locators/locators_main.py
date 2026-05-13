@@ -3,7 +3,7 @@ from page.elements import WebElement
 import os
 
 class Main(WebPage):
-    def __init__(self, web_driver, url=None):
+    def __init__(self, web_driver, url=''):
         if not url:
             url = os.getenv("MAIN") or 'https://idv.163.com/'
 
@@ -16,18 +16,8 @@ class Main(WebPage):
     btn_gallery = WebElement(xpath="//a[@href='gallery/en/']")
     btn_merch = WebElement(xpath="//a[@href='https://neteasestore.com/collections/identity-v']")
     btn_art_museum = WebElement(xpath="//a[@href='en/video.html']")
-    btn_character_hunter = WebElement(xpath="//a[@href='character/index.html?type=hunter']")
+    btn_downbox = WebElement(xpath="//div[@class='downbox downboxen']")
 
-
-
-        # btn_character = WebDriverWait(web_driver, 10).until(
-        #     EC.presence_of_element_located((By.ID, 'Jmain'))
-        # )
-        # self.btn_character = web_driver.find_element (By.CLASS_NAME, "btLink btnJs")
-        # object.__setattr__(self,'btn_character', WebElement(web_driver, By.CSS_SELECTOR, value="a[href='en/character.html']"))
-        # object.__setattr__(self,'btn_features', WebElement(web_driver, By.CSS_SELECTOR, value="a[href='en/features.html']"))
-        # object.__setattr__(self, 'btn_newspage', WebElement(web_driver, By.CSS_SELECTOR, value="a[href='en/newspage.html']"))
-        # object.__setattr__(self,'btn_story', WebElement(web_driver, By.CSS_SELECTOR, value="a[href='en/story.html']"))
-        # object.__setattr__(self, 'btn_gallery', WebElement(web_driver, By.CSS_SELECTOR, value="a[href='gallery/en/']"))
-        # object.__setattr__(self, 'btn_merch', WebElement(web_driver, By.CSS_SELECTOR, value="a[href='https://neteasestore.com/collections/identity-v']"))
-        # object.__setattr__(self, 'btn_art_museum', WebElement(web_driver, By.CSS_SELECTOR, value="a[href='en/video.html']"))
+    btn_googleplay = WebElement(xpath="//a[@href='https://app.appsflyer.com/com.netease.idv.googleplay?pid=officialwebg&c=1']")
+    btn_appstore = WebElement(xpath="//a[@href='https://app.appsflyer.com/id1347780764?pid=officialwebg&c=1']")
+    btn_pclauncher = WebElement(xpath="//a[@href='https://adl.easebar.com/d/g/idv/c/overseas?type=pc' and @class='btnApp']")
