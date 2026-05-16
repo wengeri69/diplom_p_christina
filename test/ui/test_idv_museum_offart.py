@@ -10,8 +10,10 @@ def test_museum(web_browser):
     page = Idv_museum_offart(web_browser)
     page.btn_art_museum.click()
     page.btn_more.click()
+    page.scroll_down(600)
+    scroll_element = page.btn_scroll.find()
     for i in range (3):
-        page.scroll_down(800)
+        page._web_driver.execute_script("arguments[0].scrollTop += 800", scroll_element)
         time.sleep(2)
     #добавить так чтобы музей картинок листался вниз плавно так чтобы можно было все проверить
 

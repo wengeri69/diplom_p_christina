@@ -25,5 +25,5 @@ def test_gallery_header(web_browser):
         check.is_true(btn.is_clickable(), f'Элемент {txt} не кликабелен')
         check.is_true(btn.is_presented(), f'Элемента {txt} нет в DOM дереве')
         check.is_true(btn.is_visible(), f'Элемент {txt} не виден на экране')
-        check.equal(btn.get_attribute('scr'), href, f'Неверная ссылка в {txt}')
+        check.equal(btn.get_attribute('src'), href, f'Неверная ссылка в {txt}')
         check.equal(btn.get_text(), txt, f'Неверный текст в {txt}')
