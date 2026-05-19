@@ -17,7 +17,9 @@ class Idv_museum_offart(WebPage):
     btn_fanillustration = WebElement(xpath="//li[@class='navItem nav2']")
     btn_videoanimation = WebElement(xpath="//li[@class='navItem nav3']")
     btn_music = WebElement(xpath="//li[@class='navItem nav4']")
-    # btn_artboxscroll = WebElement(xpath="//div[@class='nicescroll-rails' and @id='ascrail2000']")
+    # btn_scroll = WebElement(xpath="//div[contains(@class, 'artBox')]")
+
+    # btn_artboxscroll = WebElement(xpath="//div[@class='nicescroll-rails' and @id='ascrail2000']") два локатора скрола внутри сайта
     btn_scroll = WebElement(xpath="//div[@style='position: relative; top: 651px; float: right; width: 7px; height: 483px; background-color: rgb(205, 68, 56); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background-clip: padding-box; border-radius: 10px;']")
 
     btn_return = WebElement(xpath="//a[@class='btnReturn']")
